@@ -8,7 +8,10 @@ class StorePicker extends React.Component {
   // This syntex is so contructors and binding is not needed
   goToStore = (e) => {
     e.preventDefault();
-    console.log(this)
+    // Grab what's inside input
+    const storeName = this.formInput.value.value;
+    // Check component props for history (for react router) in plug in
+    this.props.history.push(`/store/${storeName}`)
   }
 
   render(){
