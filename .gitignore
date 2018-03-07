@@ -1,4 +1,5 @@
 node_modules/
+base.js
 *.zip
 ._*
 .DS_*
