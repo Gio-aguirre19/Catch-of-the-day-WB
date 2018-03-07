@@ -16,7 +16,9 @@ class AddFishForm extends React.Component{
       desc: this.descRef.value.value,
       image: this.imageRef.value.value
     }
-    console.log(fish);
+    // Using the addfish function to send info up to state
+    this.props.addFish(fish);
+    e.currentTarget.reset();
   }
   render(){
     return(

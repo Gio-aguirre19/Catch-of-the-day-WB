@@ -6,7 +6,8 @@ class Inventory extends React.Component{
     return(
       <div className="inventory">
         <h2>Inventory</h2>
-        <AddFishForm />
+        {/* Passing prop "addfish" from parent element to form component */}
+        <AddFishForm addFish={this.props.addFish} />
       </div>
     )
   }
