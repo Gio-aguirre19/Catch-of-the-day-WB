@@ -12,13 +12,24 @@ class App extends React.Component{
     order: {}
   };
 
-  // The seconds the site is loaded
+  // The seconds the site is loaded (lesson 18)
   componentDidMount() {
     const { params } = this.props.match;
+    const localStorageRef = localStorage.getItem(params.storeId);
+    if(localStorageRef){
+      this.setState({order: JSON.parse(localStorageRef)})
+    }
     this.ref = base.syncState(`${params.storeId}/fishes`, {
       context: this,
       state: "fishes"
     });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem(
+      this.props.match.params.storeId,
+      JSON.stringify(this.state.order)
+    )
   }
 
   // When you disconnect from this page (Memory leaks)
