@@ -7,6 +7,7 @@ import sampleFishes from '../sample-fishes';
 import base from '../base';
 
 class App extends React.Component{
+  // glamorous-long-men
   state = {
     fishes: {},
     order: {}
@@ -56,6 +57,12 @@ class App extends React.Component{
 
   loadSampleFishes = () => {
     this.setState({ fishes: sampleFishes })
+  }
+
+  deleteFish = (key) => {
+    const fishesCopy = {...this.state.fishes};
+    fishesCopy[key] = null;
+    this.setState({fishes: fishesCopy});
   }
 
   addOrder = (key) => {
