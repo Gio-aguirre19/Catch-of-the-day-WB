@@ -4,14 +4,19 @@ import Fish from './Fish';
 import Order from './Order';
 import Inventory from './Inventory';
 import sampleFishes from '../sample-fishes';
+import PropTypes from 'prop-types';
 import base from '../base';
 
 class App extends React.Component{
-  // glamorous-long-men
+  // store/glamorous-long-men/
   state = {
     fishes: {},
     order: {}
   };
+
+  static propTypes = {
+    match: PropTypes.object
+  }
 
   // The seconds the site is loaded (lesson 18)
   componentDidMount() {
