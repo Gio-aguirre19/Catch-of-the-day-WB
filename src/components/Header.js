@@ -19,10 +19,4 @@ Header.propTypes = {
   tagline: PropTypes.string
 }
 
-// class Header extends React.Component{
-//   render(){
-//
-//   }
-// }
-
 export default Header;
