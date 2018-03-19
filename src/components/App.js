@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import base from '../base';
 
 class App extends React.Component{
-  // store/glamorous-long-men/
+  // /store/glamorous-long-men/
   state = {
     fishes: {},
     order: {}
@@ -18,7 +18,6 @@ class App extends React.Component{
     match: PropTypes.object
   }
 
-  // The seconds the site is loaded (lesson 18)
   componentDidMount() {
     const { params } = this.props.match;
     const localStorageRef = localStorage.getItem(params.storeId);
