@@ -1,11 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
-export default class Login extends React.Component{
-  render(){
-    return(
-      <div className="">
+const Login = (props) => (
+  <nav className="login">
+    <h2>Inventory Login</h2>
+    <p>Sign in to manage your stores's inventory</p>
+    <button className="github" onClick={() => props.authenticate("Github")}>Sign in with Github</button>
+    <button className="twitter" onClick={() => props.authenticate("Twitter")}>Sign in with Twitter</button>
+    <button className="facebook" onClick={() => props.authenticate("Facebook")}>Sign in with Facebook</button>
+  </nav>
+)
 
-      </div>
-    )
-  };
+Login.propTypes = {
+  authenticate: PropTypes.func.isRequired
 }
+
+export default Login;
