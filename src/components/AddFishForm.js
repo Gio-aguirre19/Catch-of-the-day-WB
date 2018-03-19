@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class AddFishForm extends React.Component{
+export default class AddFishForm extends React.Component{
   nameRef = React.createRef();
   priceRef = React.createRef();
   statusRef = React.createRef();
@@ -41,5 +41,3 @@ class AddFishForm extends React.Component{
     )
   }
 }
-
-export default AddFishForm;

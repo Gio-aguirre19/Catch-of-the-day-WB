@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-class EditFishForm extends React.Component{
+export default class EditFishForm extends React.Component{
   static propTypes = {
     fish: PropTypes.shape({
       name: PropTypes.string,
@@ -42,5 +42,3 @@ class EditFishForm extends React.Component{
     )
   };
 }
-
-export default EditFishForm;

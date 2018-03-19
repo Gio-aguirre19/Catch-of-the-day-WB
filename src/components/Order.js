@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {formatPrice} from '../helpers';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 
-class Order extends React.Component{
+export default class Order extends React.Component{
   static propTypes = {
     fishes: PropTypes.object,
     order: PropTypes.object,
@@ -70,5 +70,3 @@ class Order extends React.Component{
     )
   }
 }
-
-export default Order;

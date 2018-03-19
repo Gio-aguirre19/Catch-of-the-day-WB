@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AddFishForm from './AddFishForm';
 import EditFishForm from './EditFishForm';
 
-class Inventory extends React.Component{
+export default class Inventory extends React.Component{
   static propTypes = {
     fish: PropTypes.object,
     updateFish: PropTypes.func,
@@ -26,5 +26,3 @@ class Inventory extends React.Component{
     )
   }
 }
-
-export default Inventory;

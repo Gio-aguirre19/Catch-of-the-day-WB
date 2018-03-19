@@ -7,7 +7,7 @@ import sampleFishes from '../sample-fishes';
 import PropTypes from 'prop-types';
 import base from '../base';
 
-class App extends React.Component{
+export default class App extends React.Component{
   // /store/glamorous-long-men/
   state = {
     fishes: {},
@@ -108,5 +108,3 @@ class App extends React.Component{
     )
   };
 }
-
-export default App;
