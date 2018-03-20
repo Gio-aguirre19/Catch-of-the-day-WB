@@ -20,22 +20,30 @@ export default class Inventory extends React.Component{
     owner: null
   }
 
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.authHandler({ user })
+      }
+    })
+  }
+
   authHandler = async (authData) => {
     // Looking for current store in firebase
     const store = await base.fetch(this.props.storeId, { context: this });
     // Claim store owner
     if (!store.owner) {
       // Save as owner
-      await base.post(`${this.props.storeID}/owner`, {
-        // Gotten from console.log(authData) (Unique Identifier)
+      await base.post(`${this.props.storeId}/owner`, {
+        // Gotten from console.log(authData) (User Identifier)
         data: authData.user.uid
-      })
-      // Set state for current user
-      this.setState({
-        uid: authData.user.uid,
-        owner: store.owner || authData.user.uid
       });
     }
+    // Set state for current user
+    this.setState({
+      uid: authData.user.uid,
+      owner: store.owner || authData.user.uid
+    });
   }
 
   logout = async () => {
@@ -45,7 +53,7 @@ export default class Inventory extends React.Component{
 
   authenticate = (provider) => {
     const authProvider = new firebase.auth[`${provider}AuthProvider`]();
-    firebaseApp.auth().signInWithPopup(authProvider).then(this.authHandler) ;
+    firebaseApp.auth().signInWithPopup(authProvider).then(this.authHandler);
   }
 
   render(){
